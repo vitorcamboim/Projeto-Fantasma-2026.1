@@ -1,0 +1,63 @@
+---
+# Nome do arquivo PDF gerado na pasta resultado
+output-file: "Nome do alocado - análise 3"
+---
+
+```{r setup}
+source("rdocs/entrega3.R")
+```
+
+```{r}
+# Rodar apenas uma vez na vida!
+## Instalando o tinytex(pacote apenas)
+### CRAN version
+install.packages('tinytex')
+
+
+## Baixando o tinytex
+library(tinytex)
+tinytex::install_tinytex()
+```
+
+
+
+# Análises
+
+## Análise 3
+
+
+```{r}
+#| label: fig-
+#| fig-cap: "Gráfico  "
+
+```
+
+
+::: {#quad- layout-align="center" quad-pos="H"}
+```{=latex}
+
+
+
+```
+
+Medidas resumo da 
+:::
+
+
+
+::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
+```{=latex}
+
+
+```
+
+
+:::
+
+
+
+$\ref{fig-}$
+
+[@tbl-]
+
+[**Quadro** @quad-]
