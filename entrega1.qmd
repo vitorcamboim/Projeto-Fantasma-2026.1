@@ -1,9 +1,10 @@
 ---
 # Nome do arquivo PDF gerado na pasta resultado
-output-file: "Nome do alocado - análise 1"
+output-file: "Vítor Camboim Simeão - análise 1"
 ---
 
 ```{r setup}
+#| include: false
 source("rdocs/entrega1.R")
 ```
 
@@ -11,12 +12,10 @@ source("rdocs/entrega1.R")
 # Rodar apenas uma vez na vida!
 ## Instalando o tinytex(pacote apenas)
 ### CRAN version
-install.packages('tinytex')
 
 
 ## Baixando o tinytex
 library(tinytex)
-tinytex::install_tinytex()
 ```
 
 
@@ -24,40 +23,83 @@ tinytex::install_tinytex()
 
 ## Análise 1
 
+### Distribuição das idades por plataforma
 
 ```{r}
-#| label: fig-
-#| fig-cap: "Gráfico  "
-
+#| label: fig-boxplot_meios
+#| fig-cap: "Gráfico de visualização de meios"
+boxplot_meios
 ```
 
 
-::: {#quad- layout-align="center" quad-pos="H"}
+```{r}
+
+``` 
+
+### Medidas resumo das idades por plataforma
+::: {#quad-quadro1 layout-align="center" quad-pos="H"}
 ```{=latex}
-
-
+\begin{quadro}[H]
+	\setlength{	\tabcolsep}{9pt}
+	\renewcommand{	\arraystretch}{1.20}
+	\caption{Medidas resumo das idades por plataforma}
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
+	\begin{tabular} { | l |
+			S[table-format = -Inf.2]
+			S[table-format = -Inf.2]
+			S[table-format = -Inf.2]
+			|}
+	\hline
+		\textbf{Estatística} & \textbf{Celular} & \textbf{Computador} & \textbf{Console} \\
+		\hline
+		Média & 23,74 & 23,47 & 22,59 \\
+		Desvio Padrão & 9,30 & 9,19 & 8,87 \\
+		Variância & 86,45 & 84,40 & 78,65 \\
+		Mínimo & 10 & 10 & 10 \\
+		1º Quartil & 16 & 15 & 15 \\
+		Mediana & 23 & 24 & 23 \\
+		3º Quartil & 29 & 28 & 29 \\
+		Máximo & 45 & 45 & 45 \\
+	\hline
+	\end{tabular}
+	\label{quad:quadro_resumo1}
+	\end{adjustbox}
+\end{quadro}
 
 ```
-
-Medidas resumo da 
 :::
 
 
-::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
+### Frequências das plataformas utilizadas
+::: {#tbl-tabela1 layout-align="center" tbl-pos="H"}
 ```{=latex}
-
-
+\begin{table}[H]
+\centering
+\caption{Frequências das plataformas utilizadas pelos jogadores}
+\begin{tabular}{l|c|c}
+\toprule
+\textbf{Plataforma} & \textbf{Frequência} & \textbf{Porcentagem} \\
+\midrule
+Celular &  252 & 35,9\% \\
+Computador & 297 & 42,3\% \\
+Console & 153 & 21,8\% \\
+\midrule
+\textbf{Total} & \textbf{702} & \textbf{100,00\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
 ```
-
-
 :::
 
+### Conclusão
 
-### Referência para gráfico
-$\ref{fig-}$
+O resultado da $\ref{fig-boxplot_meios}$(Boxplot) e do [**Quadro** @quad-quadro1] mostram que as distribuições das idades entre as 3 plataformas digitais apresentam comportamentos bem parecidos. As médias de idade variam entre 22 e 24 anos, indicando assim que não há diferenças discrepantes na faixa etária entre os meios de utilização analisados.
 
-### Referência para tabela
-[@tbl-]
+Por conseguinte, as medianas e os quartis também estiveram relativamente próximos, demonstrando distribuições bem equilibradas entre os grupos. Os usuários de computador apresentaram uma mediana um pouco superior às demais, indicando tendência de público um pouco mais velho.
 
-### Referência para quadro
-[**Quadro** @quad-]
+Os desvios padrão estão próximos à 9 anos, demonstrando assim dispersões parecidas e variabilidade moderada das idades em geral.
+
+Por fim, não foram observadas discrepâncias elevadas e extremas relevantes no boxplot, assim indicando ausência de valores discrepantes que pudessem distorcer a análise.
+
+Em sumo, podemos concluir que, mesmo havendo uma diferença na popularidade das plataformas, os jogadores possuem idades parecidas em todos os grupos. Portanto, isso mostra que o perfil etário dos usuários é bem homogêneo, não importando qual plataforma eles usem pra jogar.
