@@ -1,62 +1,60 @@
 ---
 # Nome do arquivo PDF gerado na pasta resultado
-output-file: "Nome do alocado - análise 2"
+output-file: "Vítor Camboim Simeão - análise 2"
 ---
 
 ```{r setup}
+#| include: false
 source("rdocs/entrega2.R")
-```
-
-```{r}
-# Rodar apenas uma vez na vida!
-## Instalando o tinytex(pacote apenas)
-### CRAN version
-install.packages('tinytex')
-
-
-## Baixando o tinytex
-library(tinytex)
-tinytex::install_tinytex()
 ```
 
 
 
 # Análises
 
-## Análise 1
+## Análise 2
 
+A análise a seguir tem como objetivo investigar a receita mensal do jogo "Minecraft" durante o ano de 2025. Para isso, foi construído um gráfico de linhas ($\ref{fig-grafico_receita_2025}$) representando a evolução do faturamento em dólares ao longo dos meses. Além disso, foi elaborada uma tabela ([@tbl-receita]) contendo os valores mensais exatos, permitindo uma descrição mais detalhada do comportamento financeiro do jogo durante o período analisado.
 
 ```{r}
-#| label: fig-
-#| fig-cap: "Gráfico  "
-
+#| label: fig-grafico_receita_2025
+#| fig-cap: "Receitas mensais por mês de 2025 do jogo \"Minecraft\""
+grafico_receita_2025
 ```
 
 
-::: {#quad- layout-align="center" quad-pos="H"}
 ```{=latex}
+\begin{table}
+\caption{Receita mensal do Minecraft em 2025}
+\label{tbl-receita}
+\centering
+\begin{tabular}[t]{lrr}
+\toprule
+Mês & Receita (R\$) & Receita (US\$)\\
+\midrule
+janeiro & 203,03 & 39,12\\
+fevereiro & 254,05 & 48,95\\
+março & 229,06 & 44,13\\
+abril & 203,03 & 39,12\\
+maio & 133,02 & 25,63\\
+junho & 324,06 & 62,44\\
+julho & 247,86 & 47,76\\
+agosto & 762,55 & 146,93\\
+setembro & 1721,32 & 331,66\\
+outubro & 1660,81 & 320,00\\
+novembro & 1646,59 & 317,26\\
+dezembro & 1117,41 & 215,30\\
+\bottomrule
+\end{tabular}
+\end{table}
 
-
-
+\FloatBarrier
 ```
 
-Medidas resumo da 
-:::
 
 
-::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
-```{=latex}
+Como observado na $\ref{fig-grafico_receita_2025}$ e na [@tbl-receita], a receita demonstrou crescimento ao longo do ano de 2025, com maior e menor valor registrado em setembro e maio, respectivamente. Nos primeiros meses do ano, os valores permaneceram mais baixos e sem grandes variações. Entretanto, a partir de agosto, o faturamento passou a crescer de forma mais acentuada.
 
+Entre setembro e novembro, continuou em níveis elevados, mantendo o padrão de crescimento observado no segundo semestre. Já em dezembro, houve uma queda em relação aos meses anteriores, apesar de o valor ainda ser superior aos registrados no início do ano.
 
-```
-
-
-:::
-
-
-
-$\ref{fig-}$
-
-[@tbl-]
-
-[**Quadro** @quad-]
+Dessa forma, nota-se que os ganhos apresentaram crescimento relevante ao longo de 2025, principalmente durante o segundo semestre.
