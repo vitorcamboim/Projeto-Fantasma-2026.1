@@ -70,12 +70,10 @@ ggsave("series_uni.pdf", width = 158, height = 93, units = "mm")
 # Aprendendo a usar knitr para automatizar o latex
 
 library(knitr)
+library(kableExtra)
 
 receita_minecraft_2025 %>%
-  kable(
-    format = "latex",
-    booktabs = TRUE,
-    digits = 2,
-    col.names = c("Mês", "Receita (R$)", "Receita (US$)"),
-    caption = "{@tbl-receita} Receita mensal do Minecraft em 2025"
-  )
+  kbl(format = "latex",
+      booktabs = TRUE,
+      caption = "Receita mensal do Minecraft em 2025") %>%
+  kable_styling(latex_options = "HOLD_position")
