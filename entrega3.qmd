@@ -1,9 +1,10 @@
 ---
 # Nome do arquivo PDF gerado na pasta resultado
-output-file: "Nome do alocado - análise 3"
+output-file: "Vítor Camboim Simeão - análise 3"
 ---
 
 ```{r setup}
+#| include: false
 source("rdocs/entrega3.R")
 ```
 
@@ -11,12 +12,9 @@ source("rdocs/entrega3.R")
 # Rodar apenas uma vez na vida!
 ## Instalando o tinytex(pacote apenas)
 ### CRAN version
-install.packages('tinytex')
-
-
 ## Baixando o tinytex
 library(tinytex)
-tinytex::install_tinytex()
+
 ```
 
 
@@ -25,39 +23,15 @@ tinytex::install_tinytex()
 
 ## Análise 3
 
+Esta análise tem como objetivo comparar o tempo médio mensal gasto em função da idade dos jogadores. Para isso, foram consideradas as variáveis idade (em anos) e tempo médio gasto por mês (em horas), sendo classificadas como quantitativa discreta e quantitativa contínua, respectivamente. O tempo médio por mês foi calculado a partir das variáveis quantidade de logins mensais e tempo médio de sessão (em minutos), depois transformado em horas. Para representar essa comparação, foi construído um gráfico de dispersão, permitindo observar o comportamento do tempo médio mensal em função da idade.
 
 ```{r}
-#| label: fig-
-#| fig-cap: "Gráfico  "
-
+#| label: fig-tempoporidade
+#| fig-cap: "Gráfico do Tempo Médio Mensal Gasto em Função da Idade"
+grafico_idade_tempo
 ```
 
-
-::: {#quad- layout-align="center" quad-pos="H"}
-```{=latex}
+Com base na $\ref{fig-tempoporidade}$ de dispersão apresentada, observa-se que os dados não apresentam uma relação claramente definida entre a idade dos jogadores e o tempo médio gasto mensalmente dentro da plataforma. Os valores estão dispersos ao longo das idades, indicando que não há tendência significativa de aumento ou diminuição do tempo gasto conforme a idade aumenta. Por conseguinte, nota-se a presença de alguns valores discrepantes, ou seja, mais elevados, embora a maior concentração permaneça próxima aos menores valores do eixo vertical. Dessa forma, infere-se que a idade exerce pouca ou nenhuma influência significativa sobre o tempo médio mensal gasto pelos jogadores.
 
 
 
-```
-
-Medidas resumo da 
-:::
-
-
-
-::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
-```{=latex}
-
-
-```
-
-
-:::
-
-
-
-$\ref{fig-}$
-
-[@tbl-]
-
-[**Quadro** @quad-]
