@@ -14,43 +14,42 @@ source("rdocs/entrega2.R")
 
 # Análises
 
-## Análise 2
+## Receita mensal de 2025 do jogo "Minecraft"
 
-A análise a seguir tem como objetivo investigar a receita mensal do jogo "Minecraft" durante o ano de 2025. Para isso, foi construído um gráfico de linhas ($\ref{fig-grafico_receita_2025}$) representando a evolução do faturamento em dólares ao longo dos meses. Além disso, foi elaborada uma tabela ([@tbl-receita]) contendo os valores mensais exatos, permitindo uma descrição mais detalhada do comportamento financeiro do jogo durante o período analisado.
+A análise a seguir tem como objetivo investigar a receita mensal do jogo "Minecraft" durante o ano de 2025. Para isso, foi construído um gráfico de linhas representando a evolução do faturamento em dólares ao longo dos meses. Além disso, foi elaborado um quadro contendo medidas-resumo, permitindo uma descrição mais detalhada do comportamento financeiro do jogo durante o período analisado. Foram consideradas as variáveis receita total e mês, classificadas como quantitativa contínua e qualitativa ordinal. Outrossim, a receita total foi calculada por meio da soma do valor de cada item vendido, levando em conta a quantidade, e transformada em dólares, utilizando a cotação de 1 US$ = 5,19 R$.
 
 ```{r}
 #| label: fig-grafico_receita_2025
-#| fig-cap: "Receitas mensais por mês de 2025 do jogo \"Minecraft\""
+#| fig-cap: "Gráfico da Receita pelos Meses de 2025 do Jogo \"Minecraft\""
 grafico_receita_2025
 ```
 
 
 ```{=latex}
-\begin{table}[!H]
-\centering
-\label{tbl-receita}
-\caption{Receita mensal do Minecraft em 2025}
-\centering
-\begin{tabular}[t]{lrr}
-\toprule
-Mês & Receita (R\$) & Receita (US\$)\\
-\midrule
-jan & 203,03 & 39,12\\
-fev & 254,05 & 48,95\\
-mar & 229,06 & 44,13\\
-abr & 203,03 & 39,12\\
-mai & 133,02 & 25,63\\
-jun & 324,06 & 62,44\\
-jul & 247,86 & 47,76\\
-ago & 762,55 & 146,93\\
-set & 1721,32 & 331,66\\
-out & 1660,81 & 320,00\\
-nov & 1646,59 & 317,26\\
-dez & 1117,41 & 215,30\\
-\bottomrule
-\end{tabular}
-\end{table}
-
+\begin{quadro}[H]
+	\setlength{	\tabcolsep}{9pt}
+	\renewcommand{	\arraystretch}{1.20}
+	\caption{Medidas resumo das receitas mensais do "Minecraft" em 2025}
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
+	\begin{tabular} { | l |
+			S[table-format = -Inf.2]
+			|}
+	\hline
+		\textbf{Estatística} & \textbf{Valor} \\
+		\hline
+		Média & 136,52 \\
+		Desvio Padrão & 124,89 \\
+		Mínimo & 25,63 \\
+		1º Quartil & 42,88 \\
+		Mediana & 55,7 \\
+		3º Quartil & 240,79 \\
+		Máximo & 331,66 \\
+	\hline
+	\end{tabular}
+	\label{quad:quadro_receita}
+	\end{adjustbox}
+\end{quadro}
 ```
 
 ```{=latex}
@@ -58,8 +57,4 @@ dez & 1117,41 & 215,30\\
 ```
 
 
-Como observado na $\ref{fig-grafico_receita_2025}$ e na [@tbl-receita], a receita demonstrou crescimento ao longo do ano de 2025, com maior e menor valor registrado em setembro e maio, respectivamente. Nos primeiros meses do ano, os valores permaneceram mais baixos e sem grandes variações. Entretanto, a partir de agosto, o faturamento passou a crescer de forma mais acentuada.
-
-Entre setembro e novembro, continuou em níveis elevados, mantendo o padrão de crescimento observado no segundo semestre. Já em dezembro, houve uma queda em relação aos meses anteriores, apesar de o valor ainda ser superior aos registrados no início do ano.
-
-Dessa forma, nota-se que os ganhos apresentaram crescimento relevante ao longo de 2025, principalmente durante o segundo semestre.
+Como observado na $\ref{fig-grafico_receita_2025}$ e conforme apresentado no \hyperref[quad:quadro_receita]{\textbf{Quadro~\ref*{quad:quadro_receita}}}, a receita mensal média foi de US$ 136,52, com mediana de US$ 55,70, indicando que os maiores valores observados no segundo semestre elevaram a média do período analisado. Em geral, também demonstrou crescimento ao longo do ano de 2025, com maior e menor valor registrado em setembro e maio, respectivamente. Nos primeiros meses do ano, os valores permaneceram mais baixos e sem grandes variações. Entretanto, a partir de agosto, o faturamento passou a crescer de forma mais acentuada. Entre setembro e novembro, continuou em níveis elevados, mantendo o padrão de crescimento observado no segundo semestre. Já em dezembro, houve uma queda em relação aos meses anteriores, apesar de o valor ainda ser superior aos registrados no início do ano. Dessa forma, observa-se que o desempenho financeiro apresentou crescimento relevante ao longo de 2025, principalmente durante o segundo semestre.

@@ -21,14 +21,14 @@ library(tinytex)
 
 # Análises
 
-## Análise 1
+## Análise distribuição das idades por plataforma
 
-### Distribuição das idades por plataforma
+  Esta análise foi feita com o objetivo de entender como é distribuido a idade com base em plataformas diferentes. Para isso, foi utilizado o box plot, um gráfico fundamental para visualizar distribuição, dispersão, assimetria e mediana de conjuntos de dados númericos. Essa ferramenta é ideal para comparar múltiplos grupos, identificar valores discrepantes (outliers) rapidamente e analisar a variabilidade. Nessa amostra, composta por 250 usuários, foram consideradas duas variáveis em questão, idade e plataforma, classificadas como quantitativa contínua e qualitativa nominal, respectivamente. Além disso, foi construido também um quadro, que tem como objetivo apresentar medidas-resumo presentes no gráfico como média, mediana, quartis, desvio padrão, variância, máximo e mínimo.
 
 ```{r}
 #| label: fig-boxplot_meios
-#| fig-cap: "Gráfico de visualização de meios"
-boxplot_meios
+#| fig-cap: "Gráfico da Idade dos Usuários por Plataforma"
+boxplot_idade_plataforma
 ```
 
 
@@ -36,13 +36,12 @@ boxplot_meios
 
 ``` 
 
-### Medidas resumo das idades por plataforma
-::: {#quad-quadro1 layout-align="center" quad-pos="H"}
 ```{=latex}
 \begin{quadro}[H]
 	\setlength{	\tabcolsep}{9pt}
 	\renewcommand{	\arraystretch}{1.20}
-	\caption{Medidas resumo das idades por plataforma}
+	\caption{Medidas resumo da Idade por Plataforma}
+	\label{quad:quadro_resumo1}
 	\centering
 	\begin{adjustbox}{max width=\textwidth}
 	\begin{tabular} { | l |
@@ -63,43 +62,10 @@ boxplot_meios
 		Máximo & 45 & 45 & 45 \\
 	\hline
 	\end{tabular}
-	\label{quad:quadro_resumo1}
 	\end{adjustbox}
 \end{quadro}
 
 ```
-:::
 
 
-### Frequências das plataformas utilizadas
-::: {#tbl-tabela1 layout-align="center" tbl-pos="H"}
-```{=latex}
-\begin{table}[H]
-\centering
-\caption{Frequências das plataformas utilizadas pelos jogadores}
-\begin{tabular}{l|c|c}
-\toprule
-\textbf{Plataforma} & \textbf{Frequência} & \textbf{Porcentagem} \\
-\midrule
-Celular &  252 & 35,9\% \\
-Computador & 297 & 42,3\% \\
-Console & 153 & 21,8\% \\
-\midrule
-\textbf{Total} & \textbf{702} & \textbf{100,00\%} \\
-\bottomrule
-\end{tabular}
-\end{table}
-```
-:::
-
-### Conclusão
-
-O resultado da $\ref{fig-boxplot_meios}$(Boxplot) e do [**Quadro** @quad-quadro1] mostram que as distribuições das idades entre as 3 plataformas digitais apresentam comportamentos bem parecidos. As médias de idade variam entre 22 e 24 anos, indicando assim que não há diferenças discrepantes na faixa etária entre os meios de utilização analisados.
-
-Por conseguinte, as medianas e os quartis também estiveram relativamente próximos, demonstrando distribuições bem equilibradas entre os grupos. Os usuários de computador apresentaram uma mediana um pouco superior às demais, indicando tendência de público um pouco mais velho.
-
-Os desvios padrão estão próximos à 9 anos, demonstrando assim dispersões parecidas e variabilidade moderada das idades em geral.
-
-Por fim, não foram observadas discrepâncias elevadas e extremas relevantes no boxplot, assim indicando ausência de valores discrepantes que pudessem distorcer a análise.
-
-Em sumo, podemos concluir que, mesmo havendo uma diferença na popularidade das plataformas, os jogadores possuem idades parecidas em todos os grupos. Portanto, isso mostra que o perfil etário dos usuários é bem homogêneo, não importando qual plataforma eles usem pra jogar.
+  Tendo como base a $\ref{fig-boxplot_meios}$ e o \hyperref[quad:quadro_resumo1]{\textbf{Quadro~\ref*{quad:quadro_resumo1}}}, observa-se que as distribuições das idades entre as 3 plataformas digitais apresentam comportamentos bastante semelhantes. As médias de idade variam entre 22 e 24 anos, indicando assim que não há diferenças discrepantes na faixa etária entre os meios de utilização analisados. Por conseguinte, as medianas e os quartis também estiveram relativamente próximos, demonstrando equilibrío entre os grupos. Entretanto, os usuários de computador apresentaram uma mediana um pouco superior às demais, indicando tendência de público um pouco mais velho. Os desvios padrão estão próximos à 9 anos, revelando assim dispersões parecidas e variabilidade moderada das idades em geral. Em sumo, conclui-se que, mesmo havendo uma diferença na popularidade das plataformas, os jogadores possuem idades parecidas em todos os grupos, ou seja, isso mostra que o perfil etário dos usuários é bem homogêneo, não importando qual plataforma eles usem pra jogar.

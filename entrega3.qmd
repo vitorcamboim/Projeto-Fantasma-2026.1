@@ -12,18 +12,18 @@ source("rdocs/entrega3.R")
 # Rodar apenas uma vez na vida!
 ## Instalando o tinytex(pacote apenas)
 ### CRAN version
+
 ## Baixando o tinytex
 library(tinytex)
-
 ```
 
 
 
 # Análises
 
-## Análise 3
+## Tempo mensal médio gasto pela Idade
 
-Esta análise tem como objetivo comparar o tempo médio mensal gasto em função da idade dos jogadores. Para isso, foram consideradas as variáveis idade (em anos) e tempo médio gasto por mês (em horas), sendo classificadas como quantitativa discreta e quantitativa contínua, respectivamente. O tempo médio por mês foi calculado a partir das variáveis quantidade de logins mensais e tempo médio de sessão (em minutos), depois transformado em horas. Para representar essa comparação, foi construído um gráfico de dispersão, permitindo observar o comportamento do tempo médio mensal em função da idade.
+Esta análise tem como objetivo comparar o tempo médio mensal gasto em função da idade dos jogadores. Para isso, foi considerada uma amostra de 250 jogadores. As variáveis analisadas foram idade (em anos) e tempo médio gasto por mês (em horas), sendo ambas classificadas como quantitativas contínuas. O tempo médio por mês foi calculado a partir das variáveis quantidade de logins mensais e tempo médio de sessão (em minutos), depois transformado em horas. Para representar essa comparação, foi construído um gráfico de dispersão, permitindo observar o comportamento do tempo médio mensal em função da idade. Além disso, foram construídos dois quadros que representam medidas-resumo (média, mediana,...) das duas variáveis de forma separada. Por conseguinte, também foi calculado o coeficiente de correlação de Pearson, que tem o objetivo de avaliar a intensidade da relação linear entre as variáveis.
 
 ```{r}
 #| label: fig-tempoporidade
@@ -31,7 +31,64 @@ Esta análise tem como objetivo comparar o tempo médio mensal gasto em função
 grafico_idade_tempo
 ```
 
-Com base na $\ref{fig-tempoporidade}$ de dispersão apresentada, observa-se que os dados não apresentam uma relação claramente definida entre a idade dos jogadores e o tempo médio gasto mensalmente dentro da plataforma. Os valores estão dispersos ao longo das idades, indicando que não há tendência significativa de aumento ou diminuição do tempo gasto conforme a idade aumenta. Por conseguinte, nota-se a presença de alguns valores discrepantes, ou seja, mais elevados, embora a maior concentração permaneça próxima aos menores valores do eixo vertical. Dessa forma, infere-se que a idade exerce pouca ou nenhuma influência significativa sobre o tempo médio mensal gasto pelos jogadores.
+```{=latex}
+\begin{quadro}[H]
+	\setlength{	\tabcolsep}{9pt}
+	\renewcommand{	\arraystretch}{1.20}
+	\caption{Medidas resumo da idade dos jogadores}
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
+	\begin{tabular} { | l |
+			S[table-format = -Inf.2]
+			|}
+	\hline
+		\textbf{Estatística} & \textbf{Valor} \\
+		\hline
+		Média & 23,16 \\
+		Desvio Padrão & 9,36 \\
+		Variância & 87,53 \\
+		Mínimo & 10 \\
+		1º Quartil & 15 \\
+		Mediana & 23 \\
+		3º Quartil & 28 \\
+		Máximo & 45 \\
+	\hline
+	\end{tabular}
+	\label{quad:quadro_idade}
+	\end{adjustbox}
+\end{quadro}
+```
 
+```{=latex}
+\begin{quadro}[H]
+	\setlength{	\tabcolsep}{9pt}
+	\renewcommand{	\arraystretch}{1.20}
+	\caption{Medidas resumo do tempo médio mensal gasto pelos jogadores}
+	\centering
+	\begin{adjustbox}{max width=\textwidth}
+	\begin{tabular} { | l |
+			S[table-format = -Inf.2]
+			|}
+	\hline
+		\textbf{Estatística} & \textbf{Valor} \\
+		\hline
+		Média & 7,17 \\
+		Desvio Padrão & 7,46 \\
+		Variância & 55,62 \\
+		Mínimo & 0 \\
+		1º Quartil & 2,4 \\
+		Mediana & 5,25 \\
+		3º Quartil & 9,05 \\
+		Máximo & 62,3 \\
+	\hline
+	\end{tabular}
+	\label{quad:quadro_tempo}
+	\end{adjustbox}
+\end{quadro}
+```
+
+A partir do $\hyperref[quad:quadro_idade]{\textbf{Quadro~\ref*{quad:quadro_idade}}}$ e do $\hyperref[quad:quadro_tempo]{\textbf{Quadro~\ref*{quad:quadro_tempo}}}$, percebe-se que a idade dos jogadores apresentou média de 23,16 e mediana de 23 anos, indicando que a distribuição está centrada nessa faixa etária. Em relação ao tempo médio mensal, verificou-se média de 7,17 e mediana de 5,25 horas, sugerindo que parte dos jogadores apresenta tempos de utilização superiores à média observada. Outrossim, o valor máximo de 62,3 horas evidencia a existência de jogadores com uso significativamente mais elevado da plataforma.
+
+Com base na $\ref{fig-tempoporidade}$ de dispersão apresentada, observa-se que os valores estão dispersos ao longo das idades, indicando que não há tendência significativa de aumento ou diminuição do tempo gasto conforme a idade aumenta. Por conseguinte, nota-se visualmente a presença de alguns valores discrepantes, ou seja, mais elevados, embora a maior concentração permaneça próxima aos menores valores do eixo vertical. Ademais, o coeficiente de correlação de Pearson encontrado foi r = 0,089, indicando uma associação positiva muito fraca entre as variáveis em questão. Dessa forma, observa-se que existe pouca correlação entre a idade e o tempo médio mensal gasto pelos jogadores.
 
 

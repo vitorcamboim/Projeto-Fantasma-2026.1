@@ -66,14 +66,8 @@ grafico_receita_2025 <- receita_minecraft_2025 %>%
   theme_estat()
 ggsave("series_uni.pdf", width = 158, height = 93, units = "mm")
 
-# Tabela para valores por mês:
-# Aprendendo a usar knitr para automatizar o latex
+# Quadro resumo das receitas
 
-library(knitr)
-library(kableExtra)
-
-receita_minecraft_2025 %>%
-  kbl(format = "latex",
-      booktabs = TRUE,
-      caption = "Receita mensal do Minecraft em 2025") %>%
-  kable_styling(latex_options = "HOLD_position")
+quadro_resumo_receita <- print_quadro_resumo(receita_minecraft_2025, total_dolares, 
+                    title = "Medidas resumo da receita mensal do Minecraft em dólares em 2025",
+                    label = "quad:quadro_receita")

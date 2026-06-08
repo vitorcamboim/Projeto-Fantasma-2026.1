@@ -28,8 +28,8 @@ jogadores <- read_excel("C:/Users/v4746/OneDrive/Desktop/ESTAT/Projeto-Fantasma-
 players <- read_excel("C:/Users/v4746/OneDrive/Desktop/ESTAT/Projeto-Fantasma-2026.1/rdocs/pixel110011.xlsx", sheet = "infos_players")
 
 # Verificando as colunas do banco de dados por "names" e o banco por "view"
-names(jogadores)
-names(players)
+# names(jogadores)
+# names(players)
 # View(jogadores)
 # View(players)
 
@@ -49,13 +49,13 @@ jogadores_players <- left_join(jogadores, players, by = "player_id")
 # Começando as análises...
 
 # Boxplot das idades por plataforma:
-boxplot_meios <- jogadores_players %>%
+boxplot_idade_plataforma <- jogadores_players %>%
   ggplot(aes(x = reorder(onde_jogam, idade, FUN = median), y = idade)) +
   geom_boxplot(fill = c("#A11D21"), width = 0.5) +
   stat_summary(
     fun = "mean", geom = "point", shape = 23, size = 3, fill = "white"
   ) +
-  labs(x = "Plataforma", y = "Idade em anos") +
+  labs(x = "Plataforma", y = "Idade (em anos)") +
   theme_estat()
 ggsave("box_bi.pdf", width = 158, height = 93, units = "mm")
 

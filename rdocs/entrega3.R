@@ -1,4 +1,3 @@
-setwd("C:/Users/v4746/OneDrive/Desktop/ESTAT/Projeto-Fantasma-2026.1")
 source("rdocs/source/packages.R")
 
 # ---------------------------------------------------------------------------- #
@@ -35,7 +34,7 @@ grafico_idade_tempo <- infos_jogadores %>%
   mutate(tempo_medio_mensal_horas = (logins_mes * tempo_medio_sessao_min) / 60) %>%
   ggplot() +
   aes(x = idade, y = tempo_medio_mensal_horas) +
-  geom_point(colour = "#A11D21", size = 3) +
+  geom_point(colour = "#A11D21", size = 2, alpha = 0.8) +
   labs(
     x = "Idade (anos)",
     y = "Tempo médio mensal gasto (horas)"
@@ -43,3 +42,25 @@ grafico_idade_tempo <- infos_jogadores %>%
   theme_estat()
 ggsave("disp_uni.pdf", width = 158, height = 93, units = "mm")
 
+# Coeficiente de Pearson
+
+infos_jogadores <- infos_jogadores %>%
+  mutate(tempo_medio_mensal_horas = (logins_mes * tempo_medio_sessao_min) / 60)
+
+pearson <- cor(infos_jogadores$idade,
+               infos_jogadores$tempo_medio_mensal_horas,
+               method = "pearson")
+
+# Quadro idade
+
+print_quadro_resumo(infos_jogadores,
+                    idade,
+                    title = "Medidas resumo da idade dos jogadores",
+                    label = "quad:quadro_idade")
+
+# Quadro tempo médio mensal
+
+print_quadro_resumo(infos_jogadores,
+                    tempo_medio_mensal_horas,
+                    title = "Medidas resumo do tempo médio mensal gasto pelos jogadores",
+                    label = "quad:quadro_tempo")
